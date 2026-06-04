@@ -13,6 +13,7 @@
 # Step 2: Allow .gitignore, README, assets, and marketplace
 !.gitignore
 !/README.md
+!/CITATION.cff
 !/CONTRIBUTING.md
 !/SECURITY.md
 !/FIX_NOTES.md
@@ -290,6 +291,7 @@
 
 assets/gen_typing_gif.py
 !README_CN.md
+!README_DE.md
 !opencode-commands/
 !/qoder-plugin/
 

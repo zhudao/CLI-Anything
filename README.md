@@ -20,6 +20,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
   <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-18_Apps-green?style=for-the-badge" alt="Demos"></a>
   <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C461_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="https://arxiv.org/abs/2606.03854"><img src="https://img.shields.io/badge/Tech_Report-arXiv%3A2606.03854-b31b1b?style=for-the-badge" alt="Tech Report"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -33,7 +34,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/WeChat-Group-C5EAB4?style=flat&logo=wechat&logoColor=white" alt="WeChat"></a>
 </p>
 
-**One Command Line**: Make any software agent-ready for Pi, OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;[**中文文档**](README_CN.md) | [**日本語ドキュメント**](README_JA.md)
+**One Command Line**: Make any software agent-ready for Pi, OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;[**中文文档**](README_CN.md) | [**日本語ドキュメント**](README_JA.md) | [**Deutsch**](README_DE.md)
 
 <p align="center">
   <img src="assets/cli-typing.gif" alt="CLI-Anything typing demo" width="800">
@@ -254,7 +255,7 @@ Use the CLI-Anything generator when you need a new harness for software, a codeb
 
 - **Python 3.10+**
 - Target software or source repo available locally or online
-- A supported AI coding agent: [Claude Code](#-claude-code) | [Pi](#-pi-coding-agent) | [OpenClaw](#-openclaw) | [OpenCode](#-opencode) | [Codex](#-codex) | [Qodercli](#-qodercli) | [GitHub Copilot CLI](#-github-copilot-cli) | [More Platforms](#-more-platforms-coming-soon)
+- A supported AI coding agent: [Claude Code](#-claude-code) | [Pi](#-pi-coding-agent) | [OpenClaw](#-openclaw) | [OpenCode](#-opencode) | [Codex](#-codex) | [Hermes](#-hermes) | [Qodercli](#-qodercli) | [GitHub Copilot CLI](#-github-copilot-cli) | [More Platforms](#-more-platforms-coming-soon)
 
 ### Pick Your Agent Platform
 
@@ -568,6 +569,48 @@ Use CLI-Anything to validate ./libreoffice
 
 The Codex skill adapts the same methodology used by the Claude Code plugin and
 OpenCode commands, while keeping the generated Python harness format unchanged.
+</details>
+
+<details>
+
+<summary><h4 id="-hermes">⚡ Hermes <sup><code>Experimental</code></sup> <sup><code>Community</code></sup></h4></summary>
+
+**Step 1: Install the Skill**
+
+Run the bundled installer:
+
+```bash
+# Clone the repo
+git clone https://github.com/HKUDS/CLI-Anything.git
+
+# Install the skill
+bash CLI-Anything/hermes-skill/scripts/install.sh
+```
+
+On Windows PowerShell, use:
+
+```powershell
+.\CLI-Anything\hermes-skill\scripts\install.ps1
+```
+
+This installs the skill to `$HERMES_HOME/skills/cli-anything-hermes` (or `~/.hermes/skills/cli-anything-hermes` if `HERMES_HOME` is unset).
+
+Restart [Hermes Agent](https://github.com/NousResearch/hermes-agent) after installation so it is discovered.
+
+**Step 2: Use CLI-Anything from Hermes**
+
+Describe the task in natural language, for example:
+
+```text
+Use CLI-Anything to build a harness for ./gimp
+Use CLI-Anything to refine ./shotcut for picture-in-picture workflows
+Use CLI-Anything to validate ./libreoffice
+```
+
+The Hermes skill adapts the same methodology used by the Claude Code plugin and
+Codex skill, binding Hermes's `terminal`, `execute_code`, `delegate_task`, and
+`read_file` / `write_file` / `patch` tools to the 7-phase harness workflow while
+keeping the generated Python harness format unchanged.
 </details>
 
 <details>
@@ -1296,6 +1339,7 @@ cli-anything/
 │       └── setup-cli-anything.sh         # Setup script
 │
 ├── 🤖 codex-skill/                      # Codex skill entry point
+├── 🧭 hermes-skill/                     # Hermes Agent skill entry point
 ├── 🎨 gimp/agent-harness/               # GIMP CLI (107 tests)
 ├── 🧊 blender/agent-harness/            # Blender CLI (208 tests)
 ├── ✏️ inkscape/agent-harness/            # Inkscape CLI (202 tests)
@@ -1565,6 +1609,24 @@ If CLI-Anything helps make your software Agent-native, give us a star! ⭐
     </picture>
   </a>
 </div>
+
+---
+
+## 📚 Citation
+
+If you find CLI-Anything useful, please cite our technical report:
+
+```bibtex
+@misc{yang2026clianythingagentnativecomputeruse,
+      title={CLI-Anything: Towards Agent-Native Computer Use}, 
+      author={Yuhao Yang and Tianyu Fan and Chao Huang},
+      year={2026},
+      eprint={2606.03854},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2606.03854}, 
+}
+```
 
 ---
 
